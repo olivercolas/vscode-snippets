@@ -1,0 +1,391 @@
+{
+  "Email Div": {
+    "scope": "",
+    "prefix": "wed",
+    "body": [
+      "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%;\">",
+      "\t<tr>",
+      "\t\t<td style=\"text-align:center;\">$TM_SELECTED_TEXT</td>",
+      "\t<tr>",
+      "</table>"
+    ]
+  },
+
+  "Current file name": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "fn",
+    "body": ["${TM_FILENAME_BASE/(.spec)|(.styles)|(.styled)|(.stories)//}"]
+  },
+
+  "Component from current file name": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "fnc",
+    "body": [
+      "<${TM_FILENAME_BASE/(.spec)|(.styles)|(.styled)|(.stories)//}></${TM_FILENAME_BASE/(.spec)|(.styles)|(.styled)|(.stories)//}>"
+    ]
+  },
+
+  "React Component": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "const ${TM_FILENAME_BASE}: React.FC = () => (",
+      "\t<>$1</>",
+      ")",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ]
+  },
+
+  "React Component With Props": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rcwp",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface Props {",
+      "\tchildren: React.ReactNode",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE}: React.FC<Props> = ({ children }) => (",
+      "\t<>$1</>",
+      ")",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ]
+  },
+
+  "React Styled Component": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rsc",
+    "body": [
+      "import styled from 'styled-components'",
+      "",
+      "export const $1 = styled.div`",
+      "",
+      "`"
+    ]
+  },
+
+  "React Story Component": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rssc",
+    "body": [
+      "import React from 'react'",
+      "import ${TM_FILENAME_BASE/(.stories)//} from './${TM_FILENAME_BASE/(.stories)//}'",
+      "",
+      "export default { title: '$1/${TM_FILENAME_BASE/(.stories)//}' }",
+      "",
+      "export const Pilot = () => (",
+      "\t<${TM_FILENAME_BASE/(.stories)//}>$3</${TM_FILENAME_BASE/(.stories)//}>",
+      ")",
+      "",
+      "Pilot.story = {",
+      "\tname: '$2'",
+      "}"
+    ]
+  },
+
+  "React useState": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rus",
+    "body": ["const [$1, $2] = useState($3)"]
+  },
+
+  "React useCallback": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ruc",
+    "body": ["const $1 = useCallback(() => {", "\t$2", "}, [])"]
+  },
+
+  "Import React": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uir",
+    "body": ["import React from 'react'"]
+  },
+
+  "Import Styled Components": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uis",
+    "body": ["import styled from 'styled-components'"]
+  },
+
+  "Export default from": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uef",
+    "body": ["export {default} from '$1'"]
+  },
+
+  "Import default from": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uif",
+    "body": ["import $1 from '$2'"]
+  },
+
+  "Import module from": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uimf",
+    "body": ["import {$1} from '$2'"]
+  },
+
+  "Destructured Let assignment": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "udl",
+    "body": ["let {$1} = $2"]
+  },
+
+  "Let assignment": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ul",
+    "body": ["let $1 = $2"]
+  },
+
+  "Destructured Const assignment": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "udc",
+    "body": ["const {$1} = $2"]
+  },
+
+  "Const assignment": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uc",
+    "body": ["const $1 = $2"]
+  },
+
+  "Fat arrow": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ua",
+    "body": ["() => "]
+  },
+
+  "Fat arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uf",
+    "body": ["const $1 = () => {", "\t$2", "}"]
+  },
+
+  "Styled function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ufs",
+    "body": ["export const $1 = styled.$2`", "\t$3", "`"]
+  },
+
+  "Set timeout function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ufst",
+    "body": ["setTimeout(() => {", "\t$2", "}, $1)"]
+  },
+
+  "Export default from": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uedf",
+    "body": ["export { default } from '$1'"]
+  },
+
+  "Interface Props": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uip",
+    "body": ["interface I$1Props {", "\t$2", "}"]
+  },
+
+  "Interface Props for component": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "uipp",
+    "body": ["interface I${TM_FILENAME_BASE}Props {", "\t$1", "}"]
+  },
+
+  "Log variable": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "lv",
+    "body": ["console.log({ $1 })"]
+  },
+
+  "Jest data test id": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "dti",
+    "body": ["data-testid=\"$1\"$2"]
+  },
+
+  "Jest Mocked div": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "jmdtid",
+    "body": ["<div data-testid=\"mock-$1\"></div>"]
+  },
+
+  "Jest Mock": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "jm",
+    "body": ["jest.mock('${CLIPBOARD}')"]
+  },
+
+  "Jest After Each": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "jae",
+    "body": ["afterEach(jest.clearAllMocks)"]
+  },
+
+  "Create Typescript Test": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "tt",
+    "body": [
+      "import React from 'react'",
+      "import { render } from '@testing-library/react'",
+      "import ${TM_FILENAME_BASE/(.spec)//} from './${TM_FILENAME_BASE/(.spec)//}'",
+      "",
+      "afterEach(jest.clearAllMocks)",
+      "",
+      "describe('The ${TM_FILENAME_BASE/(.spec)//} Component', () => {",
+      "\tit.todo('$1');",
+      "})"
+    ]
+  },
+
+  "Create Typescript Test FireClick": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ttfc",
+    "body": [
+      "it('clicking $1 should call $2', () => {",
+      "\tconst { getByTestId } = render(<${TM_FILENAME_BASE/(.spec)//} />)",
+      "\tconst element = getByTestId('$3')",
+      "\tfireEvent.click(element)",
+      "\t",
+      "\texpect($2).toHaveBeenCalled()",
+      "})"
+    ]
+  },
+
+  "Create Typescript Test Snapshot": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "tts",
+    "body": [
+      "it('should match snapshot', () => {",
+      "\tconst { container } = render(",
+      "\t\t<${TM_FILENAME_BASE/(.spec)//} />",
+      "\t)",
+      "",
+      "\texpect(container).toMatchSnapshot()",
+      "});"
+    ]
+  },
+
+  "Create Typescript Test Render Function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ttcrf",
+    "body": [
+      "const render${TM_FILENAME_BASE/(.spec)//} = () => {",
+      "\treturn ${CLIPBOARD}",
+      "}"
+    ]
+  },
+
+  "Create Typescript Test Mock Implementation": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ttmi",
+    "body": [";($1 as jest.Mock).mockImplementation(() => $2)"]
+  },
+
+  "Create Typescript Test Mock Return Value": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "ttmr",
+    "body": [";($1 as jest.Mock).mockReturnValue($2)"]
+  },
+
+  // grid
+  "CSS: Display grid": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cdg",
+    "body": ["display: grid;"]
+  },
+
+  "CSS: Grid Template Area": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cgta",
+    "body": ["grid-template-areas: ", "'$1'", ";"]
+  },
+
+  "CSS: Grid Template Columns": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cgtc",
+    "body": ["grid-template-columns: $1;"]
+  },
+
+  "CSS: Grid Template Rows": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cgtr",
+    "body": ["grid-template-rows: $1;"]
+  },
+
+  "CSS: Grid Area": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cga",
+    "body": ["grid-area: $1;"]
+  },
+
+  // flex
+  "CSS: Display flex": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cdf",
+    "body": ["display: flex;"]
+  },
+
+  "CSS: Align Items Flex": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cfa",
+    "body": ["align-items: center;"]
+  },
+
+  "CSS: Justify Content Flex": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cfj",
+    "body": ["justify-content: center;"]
+  },
+
+  "CSS: Flex center center": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cfcc",
+    "body": [
+      "align-items: center;",
+      "display: flex;",
+      "justify-content: center;"
+    ]
+  },
+
+  "CSS: position absolute to parent": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cpap",
+    "body": [
+      "bottom: 0px;",
+      "left: 0px;",
+      "position: absolute;",
+      "right: 0px;",
+      "top: 0px;"
+    ]
+  },
+
+  "CSS: Background Color": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cbg",
+    "body": ["background-color: #$1;"]
+  },
+
+  "CSS: Border": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cbr",
+    "body": ["border: $1px solid #$2;"]
+  },
+
+  "CSS: Border Radius": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cbrr",
+    "body": ["border-radius: $1px;"]
+  },
+
+  "CSS: Media query": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact,css,scss,less",
+    "prefix": "cmq",
+    "body": ["@media ${$1} {", "\t$2", "}"]
+  }
+}
+
